@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Meta-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta name="description" content="Identify vehicles using trained models and the OpenCV module.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Aniketh Chavare">
+        <meta name="copyright" content="Aniketh Chavare">
+
+        <!--Title & Favicon-->
+        <title>Vehicle Detection | RoadWatch</title>
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+        <!--CSS-->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/hystmodal.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    </head>
+    <body>
+        <center><p id="header"></p></center>
+        <center><p id="header-2"></p></center>
+
+        <center><p id="sub-text" class="main-content">Enter Image Number 1-10</p></center>
+        <center>
+            <label for="sub-type" id="sub-type-label" class="main-content">Type:</label>
+            <select name="type" id="sub-type" class="main-content" onchange="onchange_vehicle_detection();">
+                <option value="Image">Image</option>
+                <option value="Video">Video</option>
+            </select>
+        </center>
+        <center><input type="number" id="sub-number" class="main-content"></center>
+        <center><button id="sub-submit" class="main-content" onclick="submit_vehicle_detection();">Submit</button></center>
+        <center><img id="sub-picture" style="margin-top: -225px;"></center>
+
+        <div id="footer">
+            <p id="footer-text-2"><span onclick="delete_cache();" style="color: red;">Delete Cache</span> | <span id="footer-text-2-shortcuts" open-shortcutsModal="#modal-shortcuts" style="color: blue;">Keyboard Shortcuts</span> | <span id="footer-text-2-media" open-mediaModal="#modal-media" style="color: orange;">Media</span></p>
+        </div>
+
+        <div class="hystmodal" id="modal-shortcuts" aria-hidden="true">
+            <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                    <button data-hystclose class="hystmodal__close">Закрыть</button>
+                    <center><p class="modal-header">Keyboard Shortcuts</p></center>
+                    <center><p class="modal-shortcuts-header">Hover over each shortcut to know more.</p></center>
+                    <center><p class="modal-shortcuts-text" style="display: inline-block; text-align: left;">
+                        <span title="Opens Home (Page)">1) Ctrl + E</span><br>
+                        <span title="Opens Vehicle Detection (Page)">2) Ctrl + V</span><br>
+                        <span title="Opens License Plate Detection (Page)">3) Ctrl + L</span><br>
+                        <span title="Opens People Detection (Page)">4) Ctrl + P</span><br>
+                        <span title="Opens Crime Data (Page)">5) Ctrl + C</span><br>
+                        <span title="Delete Cache">6) Ctrl + D</span><br>
+                        <span title="Opens Keyboard Shortcuts (Popup)">7) Ctrl + K</span><br>
+                        <span title="Opens Media (Popup)">8) Ctrl + M</span><br>
+                    </p></center>
+                </div>
+            </div>
+        </div>
+
+        <div class="hystmodal" id="modal-media" aria-hidden="true">
+            <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                    <button data-hystclose class="hystmodal__close">Закрыть</button>
+                    <center><p class="modal-header">Media</p></center>
+                    <p class="modal-media-text" style="display: inline-block; text-align: left;">
+                        <span>All the sample images and videos used in RoadWatch come with this project, so you don't need to have your own images or videos to use RoadWatch.</span><br><br>
+                        <span>If you want to view or download the sample images and videos that come with RoadWatch, click <a href="https://github.com/amnasanu/RoadWatch/tree/main/MySQL/python_routers/sample_media" target="_blank">here</a>.</span><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--JavaScript-->
+        <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+        <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js"></script>
+
+        <script src="assets/js/hystmodal.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>headerTypeWriter("RoadWatch - Vehicle Detection", "Identify vehicles using trained models and the OpenCV module.");</script>
+    </body>
+</html>

@@ -76,7 +76,7 @@ async def app_vehicledetection(request: Request):
     return Jinja2Templates(directory="templates").TemplateResponse("vehicle-detection.html", {"request": request})
 
 # License Plate Detection (App)
-@app.get("/license-plate-detection")
+@app.get("/license-plate")
 async def app_licenseplatedetection(request: Request):
     # SQLite Prerequisite
     sqlite_prerequisite()
